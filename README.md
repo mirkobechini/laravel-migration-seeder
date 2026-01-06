@@ -3,7 +3,7 @@
 Impariamo a modellare la struttura dei nostri database grazie alle Migrations!
 
 ## Svolgimento
-- [] Creiamo una tabella trains e relativa Migration, cercando di capire la natura dei campi necessari. 
+- [X] Creiamo una tabella trains e relativa Migration, cercando di capire la natura dei campi necessari. 
 
 Ogni treno dovrà avere:
 
