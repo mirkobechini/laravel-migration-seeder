@@ -18,10 +18,10 @@ Se in orario o meno
 Se cancellato o meno
 È probabile che siano necessarie altre colonne per far funzionare la tabella nel modo corretto 😉
 
-- [] Inventiamo dei dati fittizi e inseriamoli tramite PhpMyAdmin.
+- [X] Inventiamo dei dati fittizi e inseriamoli tramite PhpMyAdmin.
 
-- [] Creiamo un Model per i treni 
-- [] ed un relativo Controller
+- [X] Creiamo un Model per i treni 
+- [X] ed un relativo Controller
 - [] per poi mostrare nella home page tutti i treni che sono in partenza dalla data odierna in avanti,
 - [] in ordine cronologico.
 
