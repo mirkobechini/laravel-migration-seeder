@@ -44,11 +44,11 @@
                             @endphp
                             @if ($trainStart >= $today)
                                 <tr class="">
-                                    <td class="" scope="row">{{ $train['company'] }}</td>
-                                    <td class="">{{ $train['start_station'] }}</td>
-                                    <td class="">{{ $train['arrive_station'] }}</td>
-                                    <td class="">{{ $trainStart->format("h:m d/m") }}</td>
-                                    <td class="">{{ $trainArrive->format("h:m d/m") }}</td>
+                                    <td class="text-center" scope="row">{{ $train['company'] }}</td>
+                                    <td class="text-center">{{ $train['start_station'] }}</td>
+                                    <td class="text-center">{{ $train['arrive_station'] }}</td>
+                                    <td class="text-center">{{ $trainStart->format("H:i d/m") }}</td>
+                                    <td class="text-center">{{ $trainArrive->format("H:i d/m") }}</td>
                                     <td class="text-center">{{ $train['train_code'] }}</td>
                                     <td class="text-center">{{ $train['carriages_number'] }}</td>
                                     <td class="text-center @if(!$train['onTime']) text-warning @endif">{{ ($train['onTime'])?"In orario":"In ritardo" }}</td>

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index(){
-        $trains = Train::all();
+        $trains = Train::orderBy('start_dateTime','asc')->get();
         return view("index",  compact("trains"));
     }
 }
