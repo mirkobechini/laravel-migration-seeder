@@ -1,3 +1,7 @@
+@php
+    $today = new DateTime('today');
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,34 +15,46 @@
     @extends('layouts.master')
     @section('content')
         <div class="container">
+            <div class="row pt-4 ps-1 align-item-center">
+                <span class="h2 fw-bold">
+                    Date: {{ $today->format("d-m-Y"); }}
+                </span>
+            </div>
+
             <div class="table-responsive border border-2 border-primary rounded my-3">
-                <table class="table  table-striped">
+                <table class="table table-striped">
                     <thead>
                         <tr class="bg-primary">
-                            <th scope="col" class="bg-primary-subtle">Azienda</th>
-                            <th scope="col" class="bg-primary-subtle">Stazione Partenza</th>
-                            <th scope="col" class="bg-primary-subtle">Stazione Arrivo</th>
-                            <th scope="col" class="bg-primary-subtle">Orario Partenza</th>
-                            <th scope="col" class="bg-primary-subtle">Orario Arrivo</th>
-                            <th scope="col" class="bg-primary-subtle">Codice Treno</th>
-                            <th scope="col" class="bg-primary-subtle">Totale Carrozze</th>
-                            <th scope="col" class="bg-primary-subtle">In orario</th>
-                            <th scope="col" class="bg-primary-subtle">Cancellato</th>
+                            <th scope="col" class="bg-primary-subtle text-center">Azienda</th>
+                            <th scope="col" class="bg-primary-subtle text-center">Stazione Partenza</th>
+                            <th scope="col" class="bg-primary-subtle text-center">Stazione Arrivo</th>
+                            <th scope="col" class="bg-primary-subtle text-center">Orario Partenza</th>
+                            <th scope="col" class="bg-primary-subtle text-center">Orario Arrivo</th>
+                            <th scope="col" class="bg-primary-subtle text-center">Codice Treno</th>
+                            <th scope="col" class="bg-primary-subtle text-center">Totale Carrozze</th>
+                            <th scope="col" class="bg-primary-subtle text-center">In orario</th>
+                            <th scope="col" class="bg-primary-subtle text-center">Cancellato</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($trains as $train)
-                            <tr class="">
-                                <td scope="row">{{ $train['company'] }}</td>
-                                <td>{{ $train['start_station'] }}</td>
-                                <td>{{ $train['arrive_station'] }}</td>
-                                <td>{{ $train['start_dateTime'] }}</td>
-                                <td>{{ $train['arrive_dateTime'] }}</td>
-                                <td class="text-center">{{ $train['train_code'] }}</td>
-                                <td class="text-center">{{ $train['carriages_number'] }}</td>
-                                <td>{{ $train['onTime'] }}</td>
-                                <td>{{ $train['deleted'] }}</td>
-                            </tr>
+                            @php
+                                $trainStart = new DateTime($train['start_dateTime']);
+                                $trainArrive = new DateTime($train['arrive_dateTime']);
+                            @endphp
+                            @if ($trainStart >= $today)
+                                <tr class="">
+                                    <td class="" scope="row">{{ $train['company'] }}</td>
+                                    <td class="">{{ $train['start_station'] }}</td>
+                                    <td class="">{{ $train['arrive_station'] }}</td>
+                                    <td class="">{{ $trainStart->format("h:m d/m") }}</td>
+                                    <td class="">{{ $trainArrive->format("h:m d/m") }}</td>
+                                    <td class="text-center">{{ $train['train_code'] }}</td>
+                                    <td class="text-center">{{ $train['carriages_number'] }}</td>
+                                    <td class="text-center @if(!$train['onTime']) text-warning @endif">{{ ($train['onTime'])?"In orario":"In ritardo" }}</td>
+                                    <td class="text-center @if($train['deleted']) text-danger @endif">{{ ($train['deleted'])?"Cancellato":"" }}</td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>
