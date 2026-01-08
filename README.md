@@ -26,5 +26,5 @@ Se cancellato o meno
 - [X] in ordine cronologico.
 
 ## Bonus 
-- [] Con un po' di fantasia inventiamo lo stile del nostro tabellone treni! 
+- [X] Con un po' di fantasia inventiamo lo stile del nostro tabellone treni! 
 Posso suggerire il font "Share Tech Mono"?
