@@ -1,8 +1,12 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
+@import "@fontsource/share-tech-mono";
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+body {
+    font-family: "Share Tech Mono", monospace;
+}

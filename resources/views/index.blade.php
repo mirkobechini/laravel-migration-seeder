@@ -25,15 +25,15 @@
                 <table class="table table-striped">
                     <thead>
                         <tr class="bg-primary">
-                            <th scope="col" class="bg-primary-subtle text-center">Azienda</th>
-                            <th scope="col" class="bg-primary-subtle text-center">Stazione Partenza</th>
-                            <th scope="col" class="bg-primary-subtle text-center">Stazione Arrivo</th>
-                            <th scope="col" class="bg-primary-subtle text-center">Orario Partenza</th>
-                            <th scope="col" class="bg-primary-subtle text-center">Orario Arrivo</th>
-                            <th scope="col" class="bg-primary-subtle text-center">Codice Treno</th>
-                            <th scope="col" class="bg-primary-subtle text-center">Totale Carrozze</th>
-                            <th scope="col" class="bg-primary-subtle text-center">In orario</th>
-                            <th scope="col" class="bg-primary-subtle text-center">Cancellato</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">Azienda</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">Stazione Partenza</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">Stazione Arrivo</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">Orario Partenza</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">Orario Arrivo</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">Codice Treno</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">Totale Carrozze</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">In orario</th>
+                            <th scope="col" class="bg-primary-subtle text-center align-middle">Cancellato</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,15 +44,15 @@
                             @endphp
                             @if ($trainStart >= $today)
                                 <tr class="">
-                                    <td class="text-center" scope="row">{{ $train['company'] }}</td>
-                                    <td class="text-center">{{ $train['start_station'] }}</td>
-                                    <td class="text-center">{{ $train['arrive_station'] }}</td>
-                                    <td class="text-center">{{ $trainStart->format("H:i d/m") }}</td>
-                                    <td class="text-center">{{ $trainArrive->format("H:i d/m") }}</td>
-                                    <td class="text-center">{{ $train['train_code'] }}</td>
-                                    <td class="text-center">{{ $train['carriages_number'] }}</td>
-                                    <td class="text-center @if(!$train['onTime']) text-warning @endif">{{ ($train['onTime'])?"In orario":"In ritardo" }}</td>
-                                    <td class="text-center @if($train['deleted']) text-danger @endif">{{ ($train['deleted'])?"Cancellato":"" }}</td>
+                                    <td class="text-center align-middle" scope="row">{{ $train['company'] }}</td>
+                                    <td class="text-center align-middle">{{ $train['start_station'] }}</td>
+                                    <td class="text-center align-middle">{{ $train['arrive_station'] }}</td>
+                                    <td class="text-center align-middle">{{ $trainStart->format("H:i d/m") }}</td>
+                                    <td class="text-center align-middle">{{ $trainArrive->format("H:i d/m") }}</td>
+                                    <td class="text-center align-middle">{{ $train['train_code'] }}</td>
+                                    <td class="text-center align-middle">{{ $train['carriages_number'] }}</td>
+                                    <td class="text-center align-middle @if(!$train['onTime']) text-warning @endif">{{ ($train['onTime'])?"In orario":"In ritardo" }}</td>
+                                    <td class="text-center align-middle @if($train['deleted']) text-danger @endif">{{ ($train['deleted'])?"Cancellato":"" }}</td>
                                 </tr>
                             @endif
                         @endforeach
