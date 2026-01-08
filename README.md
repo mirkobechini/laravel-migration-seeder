@@ -22,7 +22,7 @@ Se cancellato o meno
 
 - [X] Creiamo un Model per i treni 
 - [X] ed un relativo Controller
-- [] per poi mostrare nella home page tutti i treni che sono in partenza dalla data odierna in avanti,
+- [X] per poi mostrare nella home page tutti i treni che sono in partenza dalla data odierna in avanti,
 - [] in ordine cronologico.
 
 ## Bonus 
