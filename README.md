@@ -30,4 +30,4 @@ Se cancellato o meno
 Posso suggerire il font "Share Tech Mono"?
 
 ## Seeders Bonus 
-- [] Con i Faker creare dei dati fittizi per i treni
+- [X] Con i Faker creare dei dati fittizi per i treni
