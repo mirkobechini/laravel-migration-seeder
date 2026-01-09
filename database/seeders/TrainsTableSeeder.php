@@ -25,10 +25,10 @@ class TrainsTableSeeder extends Seeder
             $newTrain->arrive_station = $faker->city();
             $newTrain->start_dateTime = $faker->dateTimeThisYear();
             $newTrain->arrive_dateTime = $faker->dateTimeThisYear();
-            $newTrain->train_code = "FR" . $faker->randomNumber(4, false);
+            $newTrain->train_code = $faker->bothify("??-####");
             $newTrain->carriages_number = $faker->randomNumber(2, false);
-            $newTrain->onTime = $faker->numberBetween(0, 1);
-            $newTrain->deleted = $faker->numberBetween(0, 1);
+            $newTrain->onTime = $faker->boolean;
+            $newTrain->deleted = $faker->boolean;
             
             $newTrain->save();
         }
