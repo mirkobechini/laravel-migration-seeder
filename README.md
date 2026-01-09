@@ -28,3 +28,6 @@ Se cancellato o meno
 ## Bonus 
 - [X] Con un po' di fantasia inventiamo lo stile del nostro tabellone treni! 
 Posso suggerire il font "Share Tech Mono"?
+
+## Seeders Bonus 
+- [] Con i Faker creare dei dati fittizi per i treni
